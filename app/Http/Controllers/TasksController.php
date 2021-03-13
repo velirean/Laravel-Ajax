@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Task;
 
 class TasksController extends Controller
 {
@@ -34,7 +35,10 @@ class TasksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $all = $request->all();
+        Task::create($all);
+
+        return redirect()->route('tasks.index');
     }
 
     /**
