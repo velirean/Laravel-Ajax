@@ -38,9 +38,10 @@ class TasksController extends Controller
     public function store(Request $request)
     {
         $all = $request->all();
-        Task::create($all);
+        $task = Task::create($all);
 
-        return redirect()->route('tasks.index');
+        return response()->json($task);
+        // return redirect()->route('tasks.index');
     }
 
     /**

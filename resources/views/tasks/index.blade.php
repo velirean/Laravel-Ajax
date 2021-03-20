@@ -53,7 +53,11 @@
             }
         })
         .done(function(response) {
-            console.log('Éxitoso', response);
+            $('#description').val('');
+            $('.table tbody').append('<tr>'
+                + '<td>' + response.id + '</td>'
+                + '<td>' + response.description + '</td>'
+                + '<td> Si <td>' + '</tr>')
         })
         .fail(function(jqXHR, response) {
             console.log('Fallido', response);
