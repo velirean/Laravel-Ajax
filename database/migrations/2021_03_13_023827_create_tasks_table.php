@@ -20,7 +20,7 @@ class CreateTasksTable extends Migration
             $table->timestamps();
         });
     }
-
+ 
     /**
      * Reverse the migrations.
      *
